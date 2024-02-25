@@ -1,0 +1,31 @@
+general {
+    interval = 1
+    colors = true
+    color_good="#FFFFFF"
+    color_degraded="#ffd75f"
+    color_bad="#FF0000"
+}
+
+order += "cpu_usage"
+order += "memory"
+order += "time"
+order += "tztime local"
+
+tztime local {
+        format = " %Y-%m-%d "
+}
+time {
+        format = " %H:%M:%S "
+    }
+cpu_usage {
+    format = " CPU %usage "
+    degraded_threshold = 50
+    max_threshold = 80
+}
+memory {
+    format = " RAM %percentage_used "
+    threshold_degraded = 50%
+    threshold_critical = 80%
+}
+
+
